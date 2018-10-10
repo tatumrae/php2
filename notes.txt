@@ -1,0 +1,66 @@
+Person (Inheritance: Is A)
+- first
+- last
+
+/               \
+Author          Patron
+- authorNum     - libraryCardNum
+
+
+Composition: Has A
+Book:
+- Title
+- Price
+- Authors
+- Publisher
+
+*Useful with Foreign Keys
+
+Model first
+Controller 
+View
+
+Countries
+- Countries Controller, Detail Method, 
+Cities
+Index
+Pages
+
+Autoload file
+- Libraries = database
+(Automatically load database and make it available to all controllers and models)
+- Autoload url????
+- Autoload models
+
+Core = MY_Controller, MY_Model (MY comes from line 117 on config file)
+
+MY_model
+- get static database value
+^- Country.php self::getXXXXXX
+- magic getter that capitalizes object name
+- check if there is a method called country, if not call getCountry, if not then return parent::__get($attr) -> parent getter
+
+
+Header include(VIEWPATH.’template/header.php’)
+Site url for links on the page (from URL helper)
+
+TO EDIT: .htaccess RewriteBase matches your folder structure
+Config base url
+Database connection in database.php
+
+<form action=“<?= site_url(‘countries/new’) ?>” method=“post”> (controller methods that handle that form)
+In Countries: $x = intval($this->input->post(“subject”); gets value from form
+Option in config where you can globally turn on global_xx_filtering
+
+change htaccess, database and config
+
+SENDING EMAIL
+index for contact controller will SHOW the form
+separate method for sending the email
+$this->view->display('contact/thankyou');
+if form not valid, show the same form again
+
+from: variable
+to: YOUR email address
+BCC: their email address
+index 
